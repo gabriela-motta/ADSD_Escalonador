@@ -3,10 +3,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 
-public class Escalonador implements Runnable {
+public class Escalonador {
 
-	private static int UNIDADE_TEMPO = 100; // ms
 	private int contador;
 	private Map<Integer, List<Evento>> agenda;
 	private Servidor servidor;
@@ -73,29 +73,53 @@ public class Escalonador implements Runnable {
 		printEstado(ev);
 	}
 
-	@Override
-	public void run() {
-		while (true) {
-			try {
-				if (agenda.containsKey(contador)) {
-					List<Evento> eventos = agenda.get(contador);
-					for (Evento ev : eventos) {
-						executaEvento(ev);
-					}
-					agenda.remove(contador);
-				}
-				Thread.sleep(UNIDADE_TEMPO);
-				++contador;
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-				System.exit(-1);
-			}
-		}
-	}
-
 	public static void main(String[] args) {
-		Thread t = new Thread(new Escalonador());
-		t.start();
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Tipo de distribuicao: ");
+		String distribuicao = sc.nextLine();
+
+		if (distribuicao.equals("uniforme")) {
+			System.out.println("Parametro a: ");
+			int a = sc.nextInt();
+			sc.nextLine();
+			System.out.println("Parametro b: ");
+			int b = sc.nextInt();
+			sc.nextLine();
+		} else if (distribuicao.equals("exponencial")) {
+			System.out.println("Parametro lambda: ");
+			int lambda = sc.nextInt();
+			sc.nextLine();
+		} else if (distribuicao.equals("normal")) {
+			System.out.println("Media: ");
+			int media = sc.nextInt();
+			sc.nextLine();
+			System.out.println("Desvio padrao: ");
+			int desvio = sc.nextInt();
+			sc.nextLine();
+		} else {
+			System.out.println("Distribuicao invalida");
+		}
+
+		System.out.println("Valor medio tempo de servico: ");
+		int valorMedio = sc.nextInt();
+		sc.nextLine();
+
+		System.out.println("Duracao da simulacao: ");
+		int duracaoSimulacao = sc.nextInt();
+		sc.nextLine();
+
+		System.out.println("Quantidade de repeticoes: ");
+		int quantRepeticoes = sc.nextInt();
+		sc.nextLine();
+
+		for (int i = 0; i < quantRepeticoes; i++) {
+			Escalonador esc = new Escalonador();
+			
+		}
+
+		sc.close();
+
 	}
 
 }
