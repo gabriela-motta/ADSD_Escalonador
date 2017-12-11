@@ -14,7 +14,6 @@ public class Escalonador {
 	public Escalonador() {
 		this.servidor = new Servidor();
 		this.agenda = new HashMap<>();
-		agendaEventoChegadaFregues(0);
 	}
 
 	private void agendaEvento(int tempo, Evento ev) {
@@ -24,10 +23,26 @@ public class Escalonador {
 		agenda.get(contador + tempo).add(ev);
 	}
 
-	private void agendaEventoChegadaFregues(int tempo) {
+	private void agendaEventoChegadaFreguesUniforme(int tempo) {
 		Random rnd = new Random();
-		int tempoAtendimento = rnd.nextInt(5) + 3;
+		int tempoAtendimento = rnd.nextInt();
 		Fregues fregues = new Fregues(tempoAtendimento, contador + tempo);
+		Evento ev = new Evento(TipoEvento.CHEGADA_FREGUES, fregues);
+		agendaEvento(tempo, ev);
+	}
+	
+	private void agendaEventoChegadaFreguesExponencial(int tempo, int lambda) {
+		Random rnd = new Random();
+		double tempoAtendimento = Math.log(1-rnd.nextDouble())/(-lambda);
+		Fregues fregues = new Fregues((int) tempoAtendimento, contador + tempo);
+		Evento ev = new Evento(TipoEvento.CHEGADA_FREGUES, fregues);
+		agendaEvento(tempo, ev);
+	}
+	
+	private void agendaEventoChegadaFreguesNormal(int tempo) {
+		Random rnd = new Random();
+		double tempoAtendimento = rnd.nextGaussian();
+		Fregues fregues = new Fregues((int) tempoAtendimento, contador + tempo);
 		Evento ev = new Evento(TipoEvento.CHEGADA_FREGUES, fregues);
 		agendaEvento(tempo, ev);
 	}
@@ -59,7 +74,7 @@ public class Escalonador {
 				servidor.setAtendendo(ev.getFregues());
 				agendaEventoTermino(ev.getFregues());
 			}
-			agendaEventoChegadaFregues(Fregues.TEMPO_CHEGADA);
+			agendaEventoChegadaFreguesUniforme(Fregues.TEMPO_CHEGADA);
 			break;
 		case TERMINO:
 			if (servidor.getFila().isVazia()) {
@@ -79,28 +94,6 @@ public class Escalonador {
 		System.out.println("Tipo de distribuicao: ");
 		String distribuicao = sc.nextLine();
 
-		if (distribuicao.equals("uniforme")) {
-			System.out.println("Parametro a: ");
-			int a = sc.nextInt();
-			sc.nextLine();
-			System.out.println("Parametro b: ");
-			int b = sc.nextInt();
-			sc.nextLine();
-		} else if (distribuicao.equals("exponencial")) {
-			System.out.println("Parametro lambda: ");
-			int lambda = sc.nextInt();
-			sc.nextLine();
-		} else if (distribuicao.equals("normal")) {
-			System.out.println("Media: ");
-			int media = sc.nextInt();
-			sc.nextLine();
-			System.out.println("Desvio padrao: ");
-			int desvio = sc.nextInt();
-			sc.nextLine();
-		} else {
-			System.out.println("Distribuicao invalida");
-		}
-
 		System.out.println("Valor medio tempo de servico: ");
 		int valorMedio = sc.nextInt();
 		sc.nextLine();
@@ -115,7 +108,30 @@ public class Escalonador {
 
 		for (int i = 0; i < quantRepeticoes; i++) {
 			Escalonador esc = new Escalonador();
-			
+			if (distribuicao.equals("uniforme")) {
+				System.out.println("Parametro a: ");
+				int a = sc.nextInt();
+				sc.nextLine();
+				System.out.println("Parametro b: ");
+				int b = sc.nextInt();
+				sc.nextLine();
+				esc.agendaEventoChegadaFreguesUniforme(duracaoSimulacao);
+			} else if (distribuicao.equals("exponencial")) {
+				System.out.println("Parametro lambda: ");
+				int lambda = sc.nextInt();
+				sc.nextLine();
+				esc.agendaEventoChegadaFreguesExponencial(duracaoSimulacao, lambda);
+			} else if (distribuicao.equals("normal")) {
+				System.out.println("Media: ");
+				int media = sc.nextInt();
+				sc.nextLine();
+				System.out.println("Desvio padrao: ");
+				int desvio = sc.nextInt();
+				sc.nextLine();
+				esc.agendaEventoChegadaFreguesNormal(duracaoSimulacao);
+			} else {
+				System.out.println("Distribuicao invalida");
+			}
 		}
 
 		sc.close();
