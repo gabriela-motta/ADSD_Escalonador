@@ -5,9 +5,8 @@ public class Distribuicao {
 	public double media;
 	public double[] params;
 	
-	public Distribuicao(TipoDistribuicao tipo, double media, double[] params) {
+	public Distribuicao(TipoDistribuicao tipo, double[] params) {
 		this.tipo = tipo;
-		this.media = media;
 		this.params = params;
 	}
 
