@@ -1,23 +1,23 @@
 
 public class Fregues {
 
-	private double chegada;
-	private double termino;
+	private int chegada;
+	private int termino;
 	
 	public Fregues() {
-		this.chegada = System.currentTimeMillis();
+		this.chegada = (int) System.currentTimeMillis();
 		this.termino = -1;
 	}
 	
 	public void finalizar(){
-		this.termino = System.currentTimeMillis();
+		this.termino = (int) System.currentTimeMillis();
 	}	
 	
-	public void finalizar(double termino){
+	public void finalizar(int termino){
 		this.termino = termino;
 	}
 
-	public double getTempoAtendido() {
+	public int getTempoAtendido() {
 		return this.termino - this.chegada;
 	}
 }

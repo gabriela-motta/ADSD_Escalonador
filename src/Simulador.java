@@ -2,26 +2,26 @@ import java.util.Queue;
 
 public class Simulador {
 
-	private int qnt_repeticoes;        
-	private double duracao_simulacao;
-	private double tempo_medio_servico;
+	private int quantRepeticoes;        
+	private int duracaoSimulacao;
+	private int tempoMedioServico;
 	private int reqRecebidas;
 	private Distribuicao dist;
 	
 	
-	public Simulador(Queue<Fregues> fila, int qnt_repeticoes, double duracao_simulacao, double tempo_medio_servico,
-			double[] params_distribuicao, TipoDistribuicao tipo_distribuicao_chegada, int req_recebidas, int req_atendidas) {
-		this.qnt_repeticoes = qnt_repeticoes;
-		this.duracao_simulacao = duracao_simulacao;
-		this.tempo_medio_servico = tempo_medio_servico;
+	public Simulador(Queue<Fregues> fila, int quantRepeticoes, int duracaoSimulacao, int tempoMedioServico,
+			int[] paramsDistribuicao, TipoDistribuicao tipoDistribuicaoChegada) {
+		this.quantRepeticoes = quantRepeticoes;
+		this.duracaoSimulacao = duracaoSimulacao;
+		this.tempoMedioServico = tempoMedioServico;
 		this.reqRecebidas = 0;
-		this.dist = new Distribuicao(tipo_distribuicao_chegada, params_distribuicao);
+		this.dist = new Distribuicao(tipoDistribuicaoChegada, paramsDistribuicao);
 	}
 	
 	public void run(){
-		for(int i = 0; i<this.qnt_repeticoes; i++){
+		for(int i = 0; i<this.quantRepeticoes; i++){
 			Servidor serv = new Servidor();
-			Escalonador esc = new Escalonador(this.tempo_medio_servico, serv);
+			Escalonador esc = new Escalonador(this.tempoMedioServico, serv);
 			double tempoInicio = System.currentTimeMillis();
 			int proximaChegada = (int) (System.currentTimeMillis() + this.dist.gerar());
 			int proximoTermino = 0;
@@ -53,7 +53,7 @@ public class Simulador {
 	
 	public boolean fimExecucao(double tempoInicio){
 		double delta = System.currentTimeMillis() - tempoInicio;
-		return delta > this.duracao_simulacao;
+		return delta > this.duracaoSimulacao;
 	}
 
 	public boolean chegouFregues(int proximaChegada){
