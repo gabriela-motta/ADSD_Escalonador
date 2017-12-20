@@ -28,7 +28,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		switch (tipo) {
-		case CHEGADA_FREGUES:
+		case CHEGADA:
 			return "Chegada";
 		default:
 			return "Saída";

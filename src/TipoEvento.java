@@ -1,4 +1,4 @@
 
 public enum TipoEvento {
-	CHEGADA_FREGUES, TERMINO;
+	CHEGADA, TERMINO, ENFILEIRAR;
 }

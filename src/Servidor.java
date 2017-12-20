@@ -1,31 +1,22 @@
 
 public class Servidor {
 	
-	private Fila fila;
-	private Fregues atendendo;
+	private boolean estado;
 	
 	public Servidor(){
-		fila = new Fila();
+		this.estado = true;
 	}
 	
-	public boolean isOcupado() {
-		return atendendo != null;
+	public boolean isLivre() {
+		return estado;
 	}
-
-	public Fila getFila() {
-		return fila;
+	
+	public void liberar(){
+		this.estado = true;
 	}
-
-	public void setFila(Fila fila) {
-		this.fila = fila;
-	}
-
-	public Fregues getAtendendo() {
-		return atendendo;
-	}
-
-	public void setAtendendo(Fregues atendendo) {
-		this.atendendo = atendendo;
+	
+	public void ocupar(){
+		this.estado = false;
 	}
 
 }
