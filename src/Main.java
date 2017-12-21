@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class Main {
 	public static void main(String[] args) {
-		Simulador sim = new Simulador(new PriorityQueue<>(), 10, 5, 2, new double[]{0, 0.4}, TipoDistribuicao.NORMAL);
+		Simulador sim = new Simulador(new PriorityQueue<>(), 15, 5, 2, new double[]{0, 0.4}, TipoDistribuicao.NORMAL);
 		
 		try {
 			FileWriter fw = new FileWriter("resultados.txt");

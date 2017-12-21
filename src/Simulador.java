@@ -26,6 +26,7 @@ public class Simulador {
 		String resultados = "";
 		for(int i = 0; i<this.quantRepeticoes; i++){
 			this.momento = 0;
+			this.reqRecebidas = 0;
 			Servidor serv = new Servidor();
 			Escalonador esc = new Escalonador(this.tempoMedioServico, serv, this.paramsDistribuicao);
 			double tempoInicio = this.momento;
@@ -39,14 +40,14 @@ public class Simulador {
 					if(!esc.filaIsEmpty()){
 						proximoTermino = (int) esc.atenderFregues(this.momento);
 					}else if(this.chegouFregues(proximaChegada)){
-						Fregues freg = new Fregues();
-						proximaChegada = (int) (this.momento +  this.dist.gerar());
+						Fregues freg = new Fregues(this.momento);
+						proximaChegada = (int) Math.abs(this.momento +  this.dist.gerar());
 						proximoTermino = (int) esc.escalonar(freg, this.momento);
 						this.momento++;
 					}
 				}else{
 					if(this.chegouFregues(proximaChegada)){
-						Fregues freg = new Fregues();
+						Fregues freg = new Fregues(this.momento);
 						esc.enfileirar(freg);
 					}
 				}

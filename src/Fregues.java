@@ -4,8 +4,8 @@ public class Fregues {
 	private int chegada;
 	private int termino;
 	
-	public Fregues() {
-		this.chegada = (int) System.currentTimeMillis();
+	public Fregues(int momento) {
+		this.chegada = momento;
 		this.termino = -1;
 	}
 	
