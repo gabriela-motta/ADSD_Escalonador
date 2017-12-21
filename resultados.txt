@@ -1,0 +1,90 @@
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738666
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 12
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738661
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 18
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738659
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 24
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738657
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 30
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738655
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 36
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738653
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 42
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738650
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 48
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738649
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 54
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738647
+Quantidade media de elementos em espera: 0
+
+Distribuicao de chegada: normal
+Parametros: 0.0 0.4
+Valor medio serviço: 2
+Duracao da simulacao: 5
+Quantidade de Requisicoes recebidas: 60
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 95738647
+Quantidade media de elementos em espera: 0
+
