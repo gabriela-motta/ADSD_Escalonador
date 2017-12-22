@@ -1,5 +1,3 @@
-import java.util.Queue;
-
 public class Simulador {
 
 	private int quantRepeticoes;        
@@ -9,9 +7,10 @@ public class Simulador {
 	private Distribuicao dist;
 	private double momento;
 	private double[] paramsDistribuicao;
+	private TipoDistribuicao tipoDistribuicaoChegada;
 	
 	
-	public Simulador(Queue<Fregues> fila, int quantRepeticoes, int duracaoSimulacao, double tempoMedioServico,
+	public Simulador(int quantRepeticoes, int duracaoSimulacao, double tempoMedioServico,
 			double[] paramsDistribuicao, TipoDistribuicao tipoDistribuicaoChegada) {
 		this.quantRepeticoes = quantRepeticoes;
 		this.duracaoSimulacao = duracaoSimulacao;
@@ -20,6 +19,7 @@ public class Simulador {
 		this.dist = new Distribuicao(tipoDistribuicaoChegada, paramsDistribuicao);
 		this.momento = 0;
 		this.paramsDistribuicao = paramsDistribuicao;
+		this.tipoDistribuicaoChegada = tipoDistribuicaoChegada;
 	}
 	
 	public String run(){
@@ -28,7 +28,7 @@ public class Simulador {
 			this.momento = 0;
 			this.reqRecebidas = 0;
 			Servidor serv = new Servidor();
-			Escalonador esc = new Escalonador(this.tempoMedioServico, serv, this.paramsDistribuicao);
+			Escalonador esc = new Escalonador(this.tempoMedioServico, serv, this.paramsDistribuicao, this.tipoDistribuicaoChegada);
 			double tempoInicio = this.momento;
 			double proximaChegada =  (this.momento + this.dist.gerar());
 			double proximoTermino = 0;
@@ -38,12 +38,12 @@ public class Simulador {
 				}
 				if(serv.isLivre()){
 					if(!esc.filaIsEmpty()){
+						serv.ocupar();
 						proximoTermino =  esc.atenderFregues(this.momento);
 					}else if(this.chegouFregues(proximaChegada)){
 						Fregues freg = new Fregues(this.momento);
 						proximaChegada =  Math.abs(this.momento +  this.dist.gerar());
 						proximoTermino =  esc.escalonar(freg, this.momento);
-						this.momento++;
 					}
 				}else{
 					if(this.chegouFregues(proximaChegada)){
@@ -51,15 +51,22 @@ public class Simulador {
 						esc.enfileirar(freg);
 					}
 				}
+				this.momento++;
 			}
+			
+			String parametros = "";
+			for (double d : paramsDistribuicao) {
+				parametros += d + " ";
+			}
+			
 			resultados += "Distribuicao de chegada: " + this.dist.getTipo() + "\n"
-			        + "Parametros: " + this.paramsDistribuicao[0] + " " + this.paramsDistribuicao[1] + "\n"
+			        + "Parametros: " + parametros  + "\n"
 					+ "Valor medio serviço: " + this.tempoMedioServico + "\n"
 					+ "Duracao da simulacao: " + this.duracaoSimulacao + "\n"
 					+ "Quantidade de Requisicoes recebidas: " + this.reqRecebidas + "\n"
 					+ "Quantidade de Requisicoes atendidas: " + esc.getReqAtendidas() + "\n"
 					+ "Tempo medio de atendimento: " + esc.getTempoMedio() + "\n"
-					+ "Quantidade media de elementos em espera: " + esc.getQuantMediaFila(momento) + "\n" + "\n";
+					+ "Quantidade media de elementos em espera: " + esc.getQuantMediaFila(this.momento) + "\n" + "\n";
 		}
 		return resultados;
 	}

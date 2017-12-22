@@ -1,13 +1,12 @@
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.PriorityQueue;
 
 public class Main {
 	public static void main(String[] args) {
-		Simulador sim = new Simulador(new PriorityQueue<>(), 15, 5, 2, new double[]{0, 0.4}, TipoDistribuicao.NORMAL);
+		Simulador sim = new Simulador(30, 10, 1, new double[]{0.5, 0.4}, TipoDistribuicao.NORMAL);
 		
 		try {
-			FileWriter fw = new FileWriter("resultados.txt");
+			FileWriter fw = new FileWriter("resultados_normal.txt");
 			fw.write(sim.run());
 			fw.close();
 		} catch (IOException e) {

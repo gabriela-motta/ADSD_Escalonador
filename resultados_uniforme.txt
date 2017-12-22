@@ -1,0 +1,270 @@
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.312562300276662
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 1.48721418700779
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.2570459612556073
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.4835646573277022
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.7872092414293335
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 5
+Tempo medio de atendimento: 1.2599324390598212
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 1.1881544731719804
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.5204833698012632
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.2529007092132038
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.2191326756596437
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 1.2607948119793053
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 1.3514982606568202
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 5
+Tempo medio de atendimento: 1.7286854090265493
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.266781161393938
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.21011713217723
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 0.7772765173563057
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 0.6254763639324764
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.3390127942496395
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 0.5622164752004388
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 0.9594858669915053
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.3365723467337547
+Quantidade media de elementos em espera: 0.08333333333333333
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 5
+Quantidade de Requisicoes atendidas: 5
+Tempo medio de atendimento: 1.3204481734524904
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.8901477734748664
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 1.484003000978781
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 5
+Quantidade de Requisicoes atendidas: 5
+Tempo medio de atendimento: 2.2145952369068773
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 7
+Quantidade de Requisicoes atendidas: 7
+Tempo medio de atendimento: 1.17643821868595
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.2272341912394378
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 0.5757641661372482
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 6
+Quantidade de Requisicoes atendidas: 6
+Tempo medio de atendimento: 1.247562504932486
+Quantidade media de elementos em espera: 0.0
+
+Distribuicao de chegada: uniforme
+Parametros: 0.0 2.0 
+Valor medio serviço: 1.0
+Duracao da simulacao: 10
+Quantidade de Requisicoes recebidas: 5
+Quantidade de Requisicoes atendidas: 5
+Tempo medio de atendimento: 0.9699108002628869
+Quantidade media de elementos em espera: 0.0
+

@@ -10,13 +10,13 @@ public class Escalonador {
 	private Servidor servidor;
 	private Distribuicao dist;
 
-	public Escalonador(double tempoMedioServico, Servidor servidor, double[] params) {
+	public Escalonador(double tempoMedioServico, Servidor servidor, double[] params, TipoDistribuicao tipoDist) {
 		this.fila = new PriorityQueue<Fregues>();
 		this.tempoTotalAtendendo = 0;
 		this.reqAtendidas = 0;
 		this.quantMediaFila = 0;
 		this.servidor = servidor;
-		this.dist = new Distribuicao(TipoDistribuicao.NORMAL, params);
+		this.dist = new Distribuicao(tipoDist, params);
 	}
 
 	public boolean filaIsEmpty() {
@@ -42,12 +42,12 @@ public class Escalonador {
 		return tempoTermino + momento;
 	}
 
-	public double getReqAtendidas() {
+	public int getReqAtendidas() {
 		return this.reqAtendidas;
 	}
 
 	public double getTempoMedio() {
-		return this.tempoTotalAtendendo/this.reqAtendidas;
+		return Math.abs(this.tempoTotalAtendendo/this.reqAtendidas);
 	}
 
 	public double getQuantMediaFila(double momento) {
