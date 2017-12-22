@@ -4,14 +4,14 @@ public class Simulador {
 
 	private int quantRepeticoes;        
 	private int duracaoSimulacao;
-	private int tempoMedioServico;
+	private double tempoMedioServico;
 	private int reqRecebidas;
 	private Distribuicao dist;
-	private int momento;
+	private double momento;
 	private double[] paramsDistribuicao;
 	
 	
-	public Simulador(Queue<Fregues> fila, int quantRepeticoes, int duracaoSimulacao, int tempoMedioServico,
+	public Simulador(Queue<Fregues> fila, int quantRepeticoes, int duracaoSimulacao, double tempoMedioServico,
 			double[] paramsDistribuicao, TipoDistribuicao tipoDistribuicaoChegada) {
 		this.quantRepeticoes = quantRepeticoes;
 		this.duracaoSimulacao = duracaoSimulacao;
@@ -30,19 +30,19 @@ public class Simulador {
 			Servidor serv = new Servidor();
 			Escalonador esc = new Escalonador(this.tempoMedioServico, serv, this.paramsDistribuicao);
 			double tempoInicio = this.momento;
-			int proximaChegada = (int) (this.momento + this.dist.gerar());
-			int proximoTermino = 0;
+			double proximaChegada =  (this.momento + this.dist.gerar());
+			double proximoTermino = 0;
 			while(!this.fimExecucao(tempoInicio)){
 				if(this.momento >= proximoTermino){
 					serv.liberar();
 				}
 				if(serv.isLivre()){
 					if(!esc.filaIsEmpty()){
-						proximoTermino = (int) esc.atenderFregues(this.momento);
+						proximoTermino =  esc.atenderFregues(this.momento);
 					}else if(this.chegouFregues(proximaChegada)){
 						Fregues freg = new Fregues(this.momento);
-						proximaChegada = (int) Math.abs(this.momento +  this.dist.gerar());
-						proximoTermino = (int) esc.escalonar(freg, this.momento);
+						proximaChegada =  Math.abs(this.momento +  this.dist.gerar());
+						proximoTermino =  esc.escalonar(freg, this.momento);
 						this.momento++;
 					}
 				}else{
@@ -69,7 +69,7 @@ public class Simulador {
 		return delta > this.duracaoSimulacao;
 	}
 
-	public boolean chegouFregues(int proximaChegada){
+	public boolean chegouFregues(double proximaChegada){
 		if(this.momento >= proximaChegada){
 			this.reqRecebidas++;
 			return true;

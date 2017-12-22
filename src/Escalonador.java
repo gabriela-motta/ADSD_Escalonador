@@ -4,13 +4,13 @@ import java.util.Queue;
 public class Escalonador {
 
 	private Queue<Fregues> fila;
-	private int tempoTotalAtendendo;
+	private double tempoTotalAtendendo;
 	private int reqAtendidas;
 	private int quantMediaFila;
 	private Servidor servidor;
 	private Distribuicao dist;
 
-	public Escalonador(int tempoMedioServico, Servidor servidor, double[] params) {
+	public Escalonador(double tempoMedioServico, Servidor servidor, double[] params) {
 		this.fila = new PriorityQueue<Fregues>();
 		this.tempoTotalAtendendo = 0;
 		this.reqAtendidas = 0;
@@ -27,30 +27,30 @@ public class Escalonador {
 		this.fila.add(freg);
 	}
 
-	public double atenderFregues(int momento) {
+	public double atenderFregues(double momento) {
 		Fregues freg = this.fila.poll();
 		return this.escalonar(freg, momento);
 	}
 
-	public double escalonar(Fregues fregues, int momento) {
+	public double escalonar(Fregues fregues, double momento) {
 		this.servidor.ocupar();
 		this.reqAtendidas++;
-		int tempoTermino = (int) this.dist.gerar();
-		fregues.finalizar((int) (tempoTermino + momento));
-		int tempoAtendido = fregues.getTempoAtendido();
+		double tempoTermino =  this.dist.gerar();
+		fregues.finalizar( (tempoTermino + momento));
+		double tempoAtendido = fregues.getTempoAtendido();
 		this.tempoTotalAtendendo += tempoAtendido;
 		return tempoTermino + momento;
 	}
 
-	public int getReqAtendidas() {
+	public double getReqAtendidas() {
 		return this.reqAtendidas;
 	}
 
-	public int getTempoMedio() {
+	public double getTempoMedio() {
 		return this.tempoTotalAtendendo/this.reqAtendidas;
 	}
 
-	public int getQuantMediaFila(int momento) {
+	public double getQuantMediaFila(double momento) {
 		return (this.quantMediaFila * (momento) + this.fila.size() ) / (momento + 1);
 	}
 }
