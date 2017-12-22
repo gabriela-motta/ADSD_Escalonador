@@ -1,0 +1,43 @@
+---
+title: "Escalonador de eventos"
+author: "Gabriel Morais & Gabriela Motta"
+date: "21 de dezembro de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr)
+library(ggplot2)
+```
+
+```{r}
+# Dados
+resultados.exponencial <- read.csv("~/Github/ADSD_Escalonador/resultados_exponencial.csv")
+resultados.normal <- read.csv("~/Github/ADSD_Escalonador/resultados_normal.csv")
+resultados.uniforme <- read.csv("~/Github/ADSD_Escalonador/resultados_uniforme.csv")
+resultados <- read.csv("~/Github/ADSD_Escalonador/resultados_geral.csv")
+```
+
+
+```{r}
+resultados %>%
+  ggplot(aes(y = Quantidade.de.Requisicoes.recebidas, x = Quantidade.de.Requisicoes.atendidas, colour = Distribuicao.de.chegada)) + 
+  geom_point() + 
+  labs(title = "Relação entre requisições atendidas e recebidas", x = "Quantidade de requisições atendidas", y = "Quantidade de requisições recebidas", colour = "Distribuição de probabilidade")
+```
+```{r}
+resultados %>%
+  ggplot(aes(x = Tempo.medio.de.atendimento, y = Quantidade.de.Requisicoes.atendidas, colour = Distribuicao.de.chegada)) + 
+  geom_line() + 
+  labs(title = "Relação entre requisições atendidas e tempo de atendimento", x = "Tempo médio de atendimento", y = "Quantidade de requisições recebidas", colour = "Distribuição de probabilidade")
+```
+
+```{r}
+resultados %>%
+  ggplot(aes(x = Distribuicao.de.chegada, y = Quantidade.de.Requisicoes.recebidas )) + 
+  geom_boxplot() + 
+  geom_point(size = .5) + 
+  labs(title = "Distribuição das requisições recebidas por distribuição de probabilidade", x = "Distribuição de probbabilidade", y = "Quantidade de requisições recebidas")
+```
